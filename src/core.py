@@ -87,7 +87,6 @@ def find_growth_rate(k, n, target_length, operations):
         parsed_seq = parser.parse_set(initial_seq)
         result = find_derivable_sets(parsed_seq, k, operations)
         if len(result) == target_length:
-            print("\n\n\n", initial_seq)
-            return(len(parsed_seq))
+            return [len(parsed_seq), initial_seq]
     
-    return None
+    return [None, None]

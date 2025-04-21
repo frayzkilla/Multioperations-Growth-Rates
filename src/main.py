@@ -20,8 +20,12 @@ if __name__ == "__main__":
     
         operations_combo = []
         operations_combo.append(parsed_op)
+        result = find_growth_rate(k, n, target_length, operations_combo)
+        if result[0] is not None:
+            output_str = "\n✅  Вектор мультиоперации: " + str(format_operation(combo)) + ", Мощность ген. мн-ва: " + str(result[0]) + ", Ген. мн-во: " + str(result[1])
+        else:
+            output_str = "\n❌  Вектор мультиоперации: " + str(format_operation(combo)) + ", ГЕН. МН-ВО НЕ СУЩ." 
         
-        output_str = "\n" + str(format_operation(combo)) + "  :   " + str(handle_none(find_growth_rate(k, n, target_length, operations_combo)))
         
         print(output_str)
 
