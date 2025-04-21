@@ -12,10 +12,10 @@ if __name__ == "__main__":
     
     k = 2
     n = 2
-    target_length = len(generate_subset_strings(k))**n
+    target_length = (2**k)**n
     print("Целевая мощность декартовой степени: ", target_length)
     operations_length = 4
-    operations_quantity = 2
+    operations_quantity = 1
     
     parser = InitialParser(k)
     
