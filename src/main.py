@@ -9,13 +9,14 @@ if __name__ == "__main__":
     input_str = "1 0, 0 1"
     op_str = "0 01 _ 1 0 1 01 _"
     k = 2
-    n = 3
+    n = 1
     target_length = len(generate_subset_strings(k))**n
-    arity = 4
+    print("Целевая мощность декартовой степени: ", target_length)
+    operations_length = 8
     
     parser = InitialParser(k)
     
-    for combo in generate_combinations(k, arity):
+    for combo in generate_combinations(k, operations_length):
         parsed_op = parser.parse_operation(combo)
     
         operations_combo = []
@@ -23,7 +24,7 @@ if __name__ == "__main__":
         result = find_growth_rate(k, n, target_length, operations_combo)
         if result[0] is not None:
             output_str = "\n✅  Вектор мультиоперации: " + str(format_operation(combo)) + ", Мощ-ть мин. ген. мн-ва: " + str(result[0]) + ", Мин. ген. мн-во: " + str(result[1])
-            with open("results/growth_rates_of_k2_n3_arity2.txt", "a", encoding="utf-8") as f:
+            with open("results/growth_rates_of_k2_n1_arity3.txt", "a", encoding="utf-8") as f:
                 f.write(output_str)
         else:
             output_str = "\n❌  Вектор мультиоперации: " + str(format_operation(combo)) + ", ГЕН. МН-ВО НЕ СУЩ." 
