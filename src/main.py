@@ -6,13 +6,15 @@ from core import find_derivable_sets, find_growth_rate
 
 if __name__ == "__main__":
     
-    input_str = "1 0, 0 1"
-    op_str = "0 01 _ 1 0 1 01 _"
-    k = 3
-    n = 1
+    # input_str = "1 0, 0 1"
+    # op_str = "0 01 _ 1 0 1 01 _"
+    
+    
+    k = 2
+    n = 2
     target_length = len(generate_subset_strings(k))**n
     print("Целевая мощность декартовой степени: ", target_length)
-    operations_length = 3
+    operations_length = 4
     operations_quantity = 2
     
     parser = InitialParser(k)
@@ -29,8 +31,8 @@ if __name__ == "__main__":
         result = find_growth_rate(k, n, target_length, operations_combo)
         if result[0] is not None:
             output_str = "\n✅  M = {" + ops_str + "}, Мощ-ть мин. ген. мн-ва: " + str(result[0]) + ", Мин. ген. мн-во: " + str(result[1])
-            with open("results/raw/growth_rates_of_sets2_k3_n1_arity1.txt", "a", encoding="utf-8") as f:
-                f.write(output_str)
+            # with open("results/raw/growth_rates_of_sets2_k3_n1_arity1.txt", "a", encoding="utf-8") as f:
+            #     f.write(output_str)
         else:
             output_str = "\n❌  M = {" + ops_str + "}, ГЕН. МН-ВО НЕ СУЩ." 
         
