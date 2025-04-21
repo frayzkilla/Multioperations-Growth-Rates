@@ -11,10 +11,11 @@ if __name__ == "__main__":
     k = 2
     n = 2
     target_length = len(generate_subset_strings(k))**n
+    arity = 4
     
     parser = InitialParser(k)
     
-    for combo in generate_combinations(k, 4):
+    for combo in generate_combinations(k, arity):
         parsed_op = parser.parse_operation(combo)
     
         operations_combo = []
