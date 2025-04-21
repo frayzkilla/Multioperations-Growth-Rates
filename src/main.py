@@ -11,7 +11,7 @@ if __name__ == "__main__":
     k = 2
     n = 2
     target_length = len(generate_subset_strings(k))**n
-    arity = 4
+    arity = 8
     
     parser = InitialParser(k)
     
@@ -22,7 +22,9 @@ if __name__ == "__main__":
         operations_combo.append(parsed_op)
         result = find_growth_rate(k, n, target_length, operations_combo)
         if result[0] is not None:
-            output_str = "\n✅  Вектор мультиоперации: " + str(format_operation(combo)) + ", Мощность ген. мн-ва: " + str(result[0]) + ", Ген. мн-во: " + str(result[1])
+            output_str = "\n✅  Вектор мультиоперации: " + str(format_operation(combo)) + ", Мощ-ть мин. ген. мн-ва: " + str(result[0]) + ", Мин. ген. мн-во: " + str(result[1])
+            with open("results/growth_rates_of_k2_n2_arity3.txt", "a", encoding="utf-8") as f:
+                f.write(output_str)
         else:
             output_str = "\n❌  Вектор мультиоперации: " + str(format_operation(combo)) + ", ГЕН. МН-ВО НЕ СУЩ." 
         
