@@ -11,7 +11,7 @@ The project is being developed by **A.A. Motoshkin** as part of his research in 
 - 📈 Calculation of growth rates  
 - 🔍 Search for all output sets of final structures  
 - 📊 Visualization of results  
-- 📤 Export of data to CSV/JSON  
+- 📤 Export of data to CSV/TXT
 
 ---
 
