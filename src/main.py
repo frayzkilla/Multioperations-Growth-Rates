@@ -1,5 +1,5 @@
 from parser import InitialParser
-from generators import generate_sequences, generate_subset_strings, generate_combinations
+from generators import generate_sequences, generate_subset_strings, generate_combinations, generate_operation_sets
 from core import determine_arities, create_multi_operation_tables
 from helpers import format_operation, handle_none
 from core import find_derivable_sets, find_growth_rate
@@ -12,25 +12,58 @@ if __name__ == "__main__":
     n = 1
     target_length = len(generate_subset_strings(k))**n
     print("Целевая мощность декартовой степени: ", target_length)
-    operations_length = 8
+    operations_length = 4
+    operations_quantity = 2
     
     parser = InitialParser(k)
     
-    for combo in generate_combinations(k, operations_length):
-        parsed_op = parser.parse_operation(combo)
     
+    for subset in generate_operation_sets(k, operations_length, operations_quantity):
         operations_combo = []
-        operations_combo.append(parsed_op)
+        for op in subset:
+            parsed_op = parser.parse_operation(op)
+            operations_combo.append(parsed_op)
+        ops_str = ";  ".join(
+            format_operation(item)
+            for item in subset
+        )
         result = find_growth_rate(k, n, target_length, operations_combo)
         if result[0] is not None:
-            output_str = "\n✅  Вектор мультиоперации: " + str(format_operation(combo)) + ", Мощ-ть мин. ген. мн-ва: " + str(result[0]) + ", Мин. ген. мн-во: " + str(result[1])
-            with open("results/growth_rates_of_k2_n1_arity3.txt", "a", encoding="utf-8") as f:
+            output_str = "\n✅  M = {" + ops_str + "}, Мощ-ть мин. ген. мн-ва: " + str(result[0]) + ", Мин. ген. мн-во: " + str(result[1])
+            with open("results/growth_rates_of_sets2_k2_n1_arity2.txt", "a", encoding="utf-8") as f:
                 f.write(output_str)
         else:
-            output_str = "\n❌  Вектор мультиоперации: " + str(format_operation(combo)) + ", ГЕН. МН-ВО НЕ СУЩ." 
+            output_str = "\n❌  M = {" + ops_str + "}, ГЕН. МН-ВО НЕ СУЩ." 
         
         
         print(output_str)
+            
+            
+            
+            
+            
+            
+    
+    # for combo in generate_combinations(k, operations_length):
+    #     parsed_op = parser.parse_operation(combo)
+    
+    #     operations_combo = []
+    #     operations_combo.append(parsed_op)
+    #     result = find_growth_rate(k, n, target_length, operations_combo)
+    #     if result[0] is not None:
+    #         output_str = "\n✅  Вектор мультиоперации: " + str(format_operation(combo)) + ", Мощ-ть мин. ген. мн-ва: " + str(result[0]) + ", Мин. ген. мн-во: " + str(result[1])
+    #         with open("results/growth_rates_of_k2_n1_arity3.txt", "a", encoding="utf-8") as f:
+    #             f.write(output_str)
+    #     else:
+    #         output_str = "\n❌  Вектор мультиоперации: " + str(format_operation(combo)) + ", ГЕН. МН-ВО НЕ СУЩ." 
+        
+        
+    #     print(output_str)
+    
+    
+    
+    
+    
 
     
     # parsed_set = parser.parse_set(input_str)

@@ -13,14 +13,14 @@ def generate_combinations(k, m):
     for combo in product(subsets, repeat=m):
         yield ' '.join(combo)
 
-def no_generate_sequences(k, n):
-    base = list(product(range(k), repeat=n))
-    max_length = k ** n  
+# def old_generate_sequences(k, n):
+#     base = list(product(range(k), repeat=n))
+#     max_length = k ** n  
     
-    for length in range(1, max_length + 1):
-        for sequence in product(base, repeat=length):
-            print(sequence)
-            yield sequence
+#     for length in range(1, max_length + 1):
+#         for sequence in product(base, repeat=length):
+#             print(sequence)
+#             yield sequence
             
 def generate_sequences(k, n):
     base = list(product(range(k), repeat=n))
@@ -32,3 +32,9 @@ def generate_sequences(k, n):
             if sorted_combo not in seen:
                 seen.add(sorted_combo)
                 yield combo  
+                
+def generate_operation_sets(k, m, size):
+    operations = list(generate_combinations(k, m))
+    
+    for subset in combinations(operations, size):
+        yield subset
