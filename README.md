@@ -1,4 +1,4 @@
-# 🔢 Multi-Operation Growth Rate Analyzer
+# 🔢 Multi-Operation Growth Rates
 
 **Application for finding growth rates of multi-operations**  
 The project is being developed by **A.A. Motoshkin** as part of his research in **discrete mathematics**.
