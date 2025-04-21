@@ -24,6 +24,9 @@ To get started with the project:
    ```bash
    mkdir Multioperations-Growth-Rates
    cd Multioperations-Growth-Rates
+
    git clone https://github.com/frayzkilla/Multioperations-Growth-Rates.git
+   pip install -r requirements.txt
+   
    cd src
    python main.py
