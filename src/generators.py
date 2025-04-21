@@ -35,6 +35,5 @@ def generate_sequences(k, n):
                 
 def generate_operation_sets(k, m, size):
     operations = list(generate_combinations(k, m))
-    
     for subset in combinations(operations, size):
         yield subset

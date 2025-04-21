@@ -30,4 +30,5 @@ def parse_file(input_file, output_file):
                     writer.writerow([m_set, cardinality, g_set])
 
 if __name__ == "__main__":
-    parse_file("results/raw/growth_rates_of_sets2_k2_n2_arity2.txt", "results/csv/growth_rates_of_sets2_k2_n2_arity2.csv")
+    file_name = "growth_rates_of_sets2_k3_n1_arity1"
+    parse_file("results/raw/"+file_name+".txt", "results/csv/"+file_name+".csv")    
