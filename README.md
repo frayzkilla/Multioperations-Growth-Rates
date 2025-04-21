@@ -7,11 +7,12 @@ The project is being developed by **A.A. Motoshkin** as part of his research in 
 
 ## 📌 Features
 
-- 🔧 Generation of multi-operations and sets of multi-operations of a given arity  
+- 🔧 Generation of multi-operations and sets of multi-operations
 - 📈 Calculation of growth rates  
-- 🔍 Search for all output sets of final structures  
+- 🔍 Search for all derivable sets 
 - 📊 Visualization of results  
 - 📤 Export of data to CSV/TXT
+- 📑 Analytical evaluation of multi-operations
 
 ---
 
