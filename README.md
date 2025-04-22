@@ -23,8 +23,8 @@ The project is being developed by **A.A. Motoshkin** as part of his research in 
    ```bash
    cd rusted_src
 
-   define arguments in main.rs
-
+define arguments in main.rs
+   ```bash
    cargo build --release
 
    cargo run --release
