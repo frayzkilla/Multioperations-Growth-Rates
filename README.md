@@ -16,7 +16,7 @@ The project is being developed by **A.A. Motoshkin** as part of his research in 
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Getting Started with Python
 
 To get started with the project:
 
@@ -30,3 +30,17 @@ To get started with the project:
    
    cd src
    python main.py
+
+
+## 🚀 Getting Started with Rust
+
+1. build project
+   ```bash
+   cd rusted_src
+
+   define arguments in main.rs
+
+   cargo build --release
+
+   cargo run --release
+
