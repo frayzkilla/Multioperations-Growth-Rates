@@ -10,11 +10,11 @@ if __name__ == "__main__":
     # op_str = "0 01 _ 1 0 1 01 _"
     
     
-    k = 2
+    k = 3
     n = 2
-    target_length = (2**k)**n
+    target_length = 2**(k*n)
     print("Целевая мощность декартовой степени: ", target_length)
-    operations_length = 4
+    operations_length = 9
     operations_quantity = 1
     
     parser = InitialParser(k)
@@ -31,8 +31,8 @@ if __name__ == "__main__":
         result = find_growth_rate(k, n, target_length, operations_combo)
         if result[0] is not None:
             output_str = "\n✅  M = {" + ops_str + "}, Мощ-ть мин. ген. мн-ва: " + str(result[0]) + ", Мин. ген. мн-во: " + str(result[1])
-            # with open("results/raw/growth_rates_of_sets2_k3_n1_arity1.txt", "a", encoding="utf-8") as f:
-            #     f.write(output_str)
+            with open("results/raw/growth_rates_of_k3_n2_arity2.txt", "a", encoding="utf-8") as f:
+                f.write(output_str)
         else:
             output_str = "\n❌  M = {" + ops_str + "}, ГЕН. МН-ВО НЕ СУЩ." 
         
