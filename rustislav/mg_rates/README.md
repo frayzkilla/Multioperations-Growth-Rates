@@ -43,3 +43,4 @@ To get started with the project:
    cargo build --release
 
    cargo run --release
+
