@@ -16,21 +16,6 @@ The project is being developed by **A.A. Motoshkin** as part of his research in 
 
 ---
 
-## 🚀 Getting Started with Python
-
-To get started with the project:
-
-1. **Create a working directory and clone the repository**:
-   ```bash
-   mkdir Multioperations-Growth-Rates
-   cd Multioperations-Growth-Rates
-
-   git clone https://github.com/frayzkilla/Multioperations-Growth-Rates.git
-   pip install -r requirements.txt
-   
-   cd src
-   python main.py
-
 
 ## 🚀 Getting Started with Rust
 
