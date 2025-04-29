@@ -1,0 +1,9 @@
+[package]
+name = "mg_rates"
+version = "0.1.1"
+edition = "2024"
+
+[dependencies]
+itertools = "0.12"
+
+
