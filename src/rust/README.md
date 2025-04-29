@@ -37,9 +37,9 @@ To get started with the project:
 1. build project
    ```bash
    cd rusted_src
-
-   define arguments in main.rs
-
+   
+2. define arguments in main.rs
+   ```bash
    cargo build --release
 
    cargo run --release
